@@ -1,49 +1,49 @@
 # Shodan Hunter
 
-Este script interactúa con la API de Shodan para obtener información sobre hosts, búsqueda de hosts, y operaciones DNS.
+This script interacts with the Shodan API to retrieve information about hosts, host searches, and DNS operations.
 
-## Instalación
+## Installation
 
-1. Clona el repositorio.
-2. Instala las dependencias con `pip install -r requirements.txt`.
+1. Clone the repository.
+2. Install the dependencies with `pip install -r requirements.txt`.
 
-## Uso
+## Usage
 
-Para ejecutar el script con argumentos puedes usaarlo en modo de línea de comandos. Ejemplo:
+To run the script with arguments, you can use it in command-line mode. Example:
 
 ```bash
 python shodan_t.py /shodan/host/ 8.8.8.8
 ```
 
-### Comandos y Parámetros
+### Commands and Parameters
 
 - `/shodan/host/{ip}`:
 
-  - `ip`: Dirección IP del host.
-  - `history` (opcional): Verdadero si se deben retornar todos los banners históricos (predeterminado: Falso).
-  - `minify` (opcional): Verdadero para solo retornar la lista de puertos y la información general del host, sin banners (predeterminado: Falso).
+  - `ip`: IP address of the host.
+  - `history` (optional): True if all historical banners should be returned (default: False).
+  - `minify` (optional): True to return only the list of ports and general host information without banners (default: False).
 
 - `/shodan/host/search`:
 
-  - `query`: Consulta de búsqueda en Shodan.
-  - `facets` (opcional): Lista separada por comas de propiedades para obtener información resumida.
-  - `page` (opcional): Número de página para paginar resultados 100 a la vez (predeterminado: 1).
-  - `minify` (opcional): Verdadero o Falso; si truncar o no algunos de los campos más grandes (predeterminado: Verdadero).
+  - `query`: Search query in Shodan.
+  - `facets` (optional): Comma-separated list of properties to get summary information.
+  - `page` (optional): Page number to paginate results 100 at a time (default: 1).
+  - `minify` (optional): True or False; whether to truncate some of the larger fields (default: True).
 
 - `/dns/resolve`:
 
-  - `hostnames`: Lista de nombres de host separados por comas; ejemplo "google.com,bing.com".
+  - `hostnames`: Comma-separated list of hostnames; e.g., "google.com,bing.com".
 
 - `/dns/domain/{domain}`:
 
-  - `domain`: Nombre de dominio a consultar; ejemplo "cnn.com".
-  - `history` (opcional): Verdadero si se debe incluir datos DNS históricos en los resultados (predeterminado: Falso).
-  - `type` (opcional): Tipo de DNS, los valores posibles son: A, AAAA, CNAME, NS, SOA, MX, TXT.
-  - `page` (opcional): Número de página para paginar resultados 100 a la vez (predeterminado: 1).
+  - `domain`: Domain name to query; e.g., "cnn.com".
+  - `history` (optional): True if historical DNS data should be included in the results (default: False).
+  - `type` (optional): DNS type, possible values are: A, AAAA, CNAME, NS, SOA, MX, TXT.
+  - `page` (optional): Page number to paginate results 100 at a time (default: 1).
 
 - `/dns/reverse`:
-  - `ips`: Lista de direcciones IP separadas por comas; ejemplo "74.125.227.230,204.79.197.200".
+  - `ips`: Comma-separated list of IP addresses; e.g., "74.125.227.230,204.79.197.200".
 
-## Documentación de la API de Shodan
+## Shodan API Documentation
 
-Este script utiliza la API de Shodan. Puedes encontrar más información sobre la API en [la documentación oficial de Shodan](https://developer.shodan.io/api).
+This script uses the Shodan API. You can find more information about the API in the [official Shodan documentation](https://developer.shodan.io/api).
